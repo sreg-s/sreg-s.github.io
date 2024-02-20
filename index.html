@@ -29,6 +29,11 @@
             margin-right: 20px;
             
         }
+        .imagem {
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+
         a:visited {
             color: white;
         }
@@ -47,9 +52,26 @@
         img {
             width: 10rem;
         }
+        
     </style>
 </head>
 <body>
+    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const imagem = document.querySelector('.imagem');
+    const overlay = document.querySelector('.overlay');
+
+    imagem.addEventListener('click', function() {
+      imagem.classList.toggle('zoomed');
+      overlay.style.display = (overlay.style.display === 'block') ? 'none' : 'block';
+    });
+
+    overlay.addEventListener('click', function() {
+      imagem.classList.remove('zoomed');
+      overlay.style.display = 'none';
+    });
+  });
+</script>
     <div class="navbar">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -92,14 +114,19 @@
         <section id="assinatura">
             <h2>Sequência de Assinaturas</h2>
             <img src="eletronic-assignature.png" alt="icone de documento" height="5%">
-            <p></p>
+            <p>O nosso sistema garante que todos os autores concordaram e assinaram o documento de participação</p>
         </section>
     </div>
 </div>
     <div class="row">
         <h1>Sistema Reg-S</h1>
         <div class="column">
-            <img src="">
+            <img src="reg1.png" class="imagem">
+            <img src="reg2.png" class="imagem">
+            <img src="reg3.png" class="imagem">
+            <img src="reg4.png" class="imagem">
+            <img src="reg5.png" class="imagem">
+            
         </div>
     </div>
     <footer>
